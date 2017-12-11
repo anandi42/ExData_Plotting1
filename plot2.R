@@ -4,9 +4,11 @@
 #The following code will:
 #1) check for presence of downloaded data file in subdirectory called "~/power_data"
 #2) read in data and create a lineplot of Global power consumption for the days speicified. 
+#3) png file will be placed in a created directory, "~/power_plots/"
 
 #Setup
 rm(list=ls())
+
 #Setup -- data download
 setwd("~")
 filepath <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"

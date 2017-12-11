@@ -5,9 +5,11 @@
 #1) check for presence of downloaded data file in subdirectory called "~/power_data"
 #2) read in data and create a lineplot of the global power consumption for the days speicified,
 #   broken down by the sub-metering types. 
+#3) png file will be placed in a created directory, "~/power_plots/"
 
 #Setup
 rm(list=ls())
+
 #Setup -- data download
 setwd("~")
 filepath <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
@@ -35,7 +37,7 @@ plotdata$dt<-strptime(plotdata$dt, "%Y-%m-%d %H:%M:%OS")
 plotdata$dt<-as.numeric(plotdata$dt)
 
 
-##Generate PNG device and make Plot 
+#3) png file will be placed in a created directory, "~/power_plots/" 
 ifelse(!dir.exists(paths = "~/power_plots"), dir.create("~/power_plots"), FALSE)
 png(file="~/power_plots/plot3.png", height=480, width=480)
 
